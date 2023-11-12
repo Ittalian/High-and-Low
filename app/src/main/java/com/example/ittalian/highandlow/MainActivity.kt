@@ -77,10 +77,7 @@ class MainActivity : AppCompatActivity() {
         val balance = droidCard - yourCard
         if (balance == 0){
 
-        } else if ((balance > 0 && answer == 'h')){
-            hitCount++
-            binding.hitText.text = getString(R.string.hit_text) + hitCount
-        } else if ((balance < 0 && answer == 'l')){
+        } else if ((balance > 0 && answer == 'h') || (balance < 0 && answer == 'l')){
             hitCount++
             binding.hitText.text = getString(R.string.hit_text) + hitCount
         } else {
@@ -94,8 +91,6 @@ class MainActivity : AppCompatActivity() {
         } else if (loseCount == 5){
             binding.resultText.text = "あなたの負けです"
             gameStart = false
-        } else {
-
         }
     }
 
